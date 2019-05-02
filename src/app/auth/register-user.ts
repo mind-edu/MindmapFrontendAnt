@@ -1,4 +1,5 @@
 export class RegisterUser {
+  id: string;
   user_name: string;
   user_pwd: string;
   email: string;
@@ -6,6 +7,7 @@ export class RegisterUser {
   code: string;
 
   constructor() {
+    this.id = '';
     this.user_name = '';
     this.user_pwd = '';
     this.email = '';

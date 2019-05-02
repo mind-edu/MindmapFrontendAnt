@@ -158,6 +158,7 @@ export class RegisterComponent implements OnInit {
 
   // 在内存中存储登录状态
   storeUserInfo() {
+    window.sessionStorage.setItem('user_id', this.user.id);
     window.sessionStorage.setItem('user_name', this.user.user_name);
     window.sessionStorage.setItem('user_pwd', this.user.user_pwd);
     window.sessionStorage.setItem('identity', this.user.identity);
@@ -201,6 +202,7 @@ export class RegisterComponent implements OnInit {
     this.userService.register(this.user)
       .subscribe(value => { // 更改接收的参数
         if (value['success']) {
+          this.user.id = value['id'];
           this.storeUserInfo(); // 存储用户信息
 
           const inModal = this.modalService.success(
