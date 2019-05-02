@@ -199,7 +199,7 @@ export class RegisterComponent implements OnInit {
     }
 
     this.userService.register(this.user)
-      .subscribe(value => {
+      .subscribe(value => { // 更改接收的参数
         if (value['success']) {
           this.storeUserInfo(); // 存储用户信息
 
