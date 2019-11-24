@@ -8,10 +8,12 @@ COPY package.json package-lock.json ./
 # RUN npm set progress=false && npm config set depth 0 && npm cache clean --force
 
 ## Storing node modules on a separate layer will prevent unnecessary npm installs at each build
+## 下载依赖包，将 node_modules 文件夹下的所有文件复制到新的文件夹my-app内
 RUN npm i && mkdir /my-app && cp -R ./node_modules ./my-app
 
 WORKDIR /my-app
 
+# copy 源文件 目的路径
 COPY . .
 
 ## Build the angular app in production mode and store the artifacts in dist folder
