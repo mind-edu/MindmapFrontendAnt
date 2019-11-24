@@ -23,7 +23,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## 部署方式（nginx或者apache服务器）
 ```
 ng build --prod --base-href /Mindmap-Frontend-Ant/
-
 ```
 将`dist`目录下的文件复制到`webapps`目录下即可通过`server_ip:8080/Mindmap-Frontend-Ant`访问
 
